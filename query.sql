@@ -37,7 +37,6 @@ create table expenditure_Categories(
 );
 create table revenue(
                         id_re int auto_increment primary key,
-                        name_re varchar(255) not null,
                         date_re date not null,
                         money_re int not null,
                         note varchar(255) not null,
@@ -46,7 +45,6 @@ create table revenue(
 );
 create table expenditure(
                             id_ex int auto_increment primary key,
-                            name_ex varchar(255) not null,
                             date_ex date not null,
                             money_ex int not null,
                             note varchar(255) not null,
