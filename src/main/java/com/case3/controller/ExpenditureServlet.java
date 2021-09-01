@@ -15,5 +15,6 @@ public class ExpenditureServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("adfad");
+        System.out.println("adfad2321312er3232");
     }
 }
