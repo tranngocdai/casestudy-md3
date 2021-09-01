@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Chao Mung den voi du an</title>
 </head>
 <body>
-
+<h1>Hello world</h1>
 </body>
 </html>
