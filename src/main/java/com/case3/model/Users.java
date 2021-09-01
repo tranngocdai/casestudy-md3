@@ -3,7 +3,7 @@ package com.case3.model;
 
 import java.util.List;
 
-public class User {
+public class Users {
     private int id;
     private String fullName;
     private String phone;
@@ -12,10 +12,10 @@ public class User {
     private String role;
     private boolean status;
 
-    public User() {
+    public Users() {
     }
 
-    public User(int id, String fullName, String phone, String username, String password, String role, boolean status) {
+    public Users(int id, String fullName, String phone, String username, String password, String role, boolean status) {
         this.id = id;
         this.fullName = fullName;
         this.phone = phone;
