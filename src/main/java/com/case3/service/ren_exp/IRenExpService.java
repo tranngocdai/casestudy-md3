@@ -9,6 +9,7 @@ public interface IRenExpService<E> extends IService<E> {
     List<E> findByDay (Date date,int id_user);
     List<E> findByWeek (Date date,int id_user);
     List<E> findByMonth (Date date,int id_user);
+    List<E> findByMoney (int minMoney,int maxMoney,int id_user);
 
 
 
