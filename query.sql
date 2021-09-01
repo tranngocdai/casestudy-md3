@@ -53,5 +53,3 @@ create table expenditure(
                             id_ec int not null,
                             foreign key (id_ec) references expenditure_Categories(id_ec)
 );
-SELECT * FROM revenue join rc on revenue.id_rc = revenueCategories.id_revenueCategories
-Where id_user =?;
