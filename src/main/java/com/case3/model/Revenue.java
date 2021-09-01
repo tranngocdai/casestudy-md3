@@ -1,18 +1,18 @@
 package com.case3.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Revenue {
     private int id;
     private Category category;
-    private LocalDate date;
+    private Date date;
     private int money;
     private String note;
 
     public Revenue() {
     }
 
-    public Revenue(int id, Category category, LocalDate date, int money, String note) {
+    public Revenue(int id, Category category, Date date, int money, String note) {
         this.id = id;
         this.category = category;
         this.date = date;
@@ -36,11 +36,11 @@ public class Revenue {
         this.category = category;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

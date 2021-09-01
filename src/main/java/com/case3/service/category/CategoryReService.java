@@ -27,6 +27,6 @@ public class CategoryReService implements ICategoryService{
 
     @Override
     public void delete(int id) {
-
+        System.out.println("namluty");
     }
 }
