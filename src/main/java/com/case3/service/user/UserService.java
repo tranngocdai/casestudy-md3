@@ -4,7 +4,7 @@ import com.case3.model.User;
 
 import java.util.List;
 
-public class UserService<User> implements IUserService<User>{
+public class UserService implements IUserService<User>{
 
     @Override
     public List<User> findAll() {
@@ -29,5 +29,10 @@ public class UserService<User> implements IUserService<User>{
     @Override
     public void delete(int id) {
 
+    }
+
+    @Override
+    public User findByUsernameAndPassword(String username, String password) {
+        return null;
     }
 }

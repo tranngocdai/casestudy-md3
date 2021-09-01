@@ -2,6 +2,7 @@ package com.case3.controller;
 
 import com.case3.model.User;
 import com.case3.service.user.UserService;
+import com.case3.validate.Validate;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,6 +15,8 @@ import java.io.IOException;
 
 @WebServlet(name = "login", value = "/homepage")
 public class LoginServlet extends HttpServlet {
+    private UserService userService = new UserService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -46,13 +49,39 @@ public class LoginServlet extends HttpServlet {
     }
 
     private void singUp(HttpServletRequest request, HttpServletResponse response) {
-
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/homepage?action=&&username=&&password=");
+        String fullName = request.getParameter("fullName");
+        String username = request.getParameter("username");
+        String phone = request.getParameter("phone");
+        String password = request.getParameter("password");
+        String role = "other";
+        boolean status = true;
+        User user = new User(fullName, phone, username, password, role, status);
+        String message;
+        Validate validate = Validate.getInstance();
+        if (validate.validate(username, validate.regexUsername)
+                && validate.validate(phone, validate.regexPhone)
+                && validate.validate(password, validate.regexPassword)) {
+            userService.save(user);
+            message = "successful";
+            request.setAttribute("message", message);
+        } else {
+            message = "not successful";
+            request.setAttribute("message", message);
+            request.setAttribute("user", user);
+        }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void login(HttpServletRequest request, HttpServletResponse response) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        UserService userService = new UserService();
         User user = userService.findByUsernameAndPassword(username, password);
         String destPage;
         if (user != null) {
@@ -60,7 +89,7 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 request.setAttribute("message", null);
                 session.setAttribute("user", user);
-                destPage = "/revenue";
+                destPage = "/expenditure";
             } else if (user.isStatus() && user.getRole().equals("admin")) {
                 HttpSession session = request.getSession();
                 request.setAttribute("message", null);

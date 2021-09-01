@@ -70,17 +70,18 @@ public class ExpenditureService implements IRenExpService<Expenditure>{
     }
     @Override
     public void save(Expenditure e) {
-        try {
-            PreparedStatement statement = connection.prepareStatement(II_EXPENDITURE);
-            statement.setDate(1,e.getDate());
-            statement.setInt(2,e.getMoney());
-            statement.setString(3,e.getNote());
-            statement.setInt(4,e.getCategory().getId());
-            statement.executeUpdate();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+//        try {
+//            PreparedStatement statement = connection.prepareStatement(II_EXPENDITURE);
+//            statement.setDate(1,e.getDate());
+//            statement.setInt(2,e.getMoney());
+//            statement.setString(3,e.getNote());
+//            statement.setInt(4,e.getCategory().getId());
+//            statement.executeUpdate();
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
     }
+
 
     @Override
     public void edit(Expenditure expenditure, int id) {

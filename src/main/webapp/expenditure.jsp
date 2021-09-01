@@ -47,18 +47,26 @@
     <div class="row">
         <div class="col-12">
             <div class="col-6">
-                <button type="button" class="col-6" >Thêm khoản thu</button>
+                <button type="button" class="col-6">Thêm khoản thu</button>
             </div>
             <div class="col-6">
                 <button type="button" class="col-6">Tìm kiếm theo mức thu</button>
             </div>
         </div>
     </div>
+    <div>
+        Bảng dữ liệu
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p>Biểu đồ</p>
+        </div>
+    </div>
 </section>
 
 <footer class="footer">
     <p>Liên hệ: 18008198.</p>
-    <i style="font-size: 100px;color: #cc3333"  class="bi bi-cloudy-fill"></i>
+    <i style="font-size: 100px;color: #cc3333" class="bi bi-cloudy-fill"></i>
 </footer>
 
 </body>
