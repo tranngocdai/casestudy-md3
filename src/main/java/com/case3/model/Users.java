@@ -1,8 +1,6 @@
 package com.case3.model;
 
 
-import java.util.List;
-
 public class Users {
     private int id;
     private String fullName;
@@ -23,6 +21,9 @@ public class Users {
         this.password = password;
         this.role = role;
         this.status = status;
+    }
+
+    public Users(String fullName, String phone, String username, String password, String role, boolean status) {
     }
 
     public int getId() {
